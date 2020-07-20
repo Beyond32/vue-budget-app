@@ -19,7 +19,6 @@
 </template>
 
 <script>
-import { log } from "util";
 export default {
   name: "Form",
   data: () => ({
@@ -62,6 +61,7 @@ export default {
       this.$refs.addItemForm.validate(valid => {
         if (valid) {
           this.$emit("submitForm", { ...this.formData });
+          this.$refs.addItemForm.resetFields();
         }
       });
     }
